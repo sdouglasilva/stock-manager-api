@@ -1,0 +1,17 @@
+# docker-compose.yml
+services:
+  db:
+    image: postgres:latest
+    container_name: product_db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=product_db
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=4dm1n
+
+    volumes:
+      - product_db_data:/var/lib/postgres/data
+
+volumes:
+  product_db_data:
